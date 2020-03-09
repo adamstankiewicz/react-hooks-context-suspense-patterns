@@ -49,6 +49,27 @@ export default function CoursePage() {
 }
 ```
 
+**data/reducer.js**
+
+```javascript
+import { SET_ACTIVE_COURSE_RUN } from './constants';
+
+export const initialState = {
+  courseDetails: undefined,
+  userEnrollments: undefined,
+  activeCourseRun: undefined,
+};
+
+export default function reducer(state, action) {
+  switch (action.type) {
+    case SET_ACTIVE_COURSE_RUN:
+      return { ...state, action.payload};
+    default:
+      return state;
+  }
+}
+```
+
 **Course.jsx**
 
 ```javascript
@@ -57,7 +78,8 @@ import React, { useContext } from 'react';
 import { FetchModuleStore } from './CoursePage';
 
 export default function Course() {
-  const { courseDetails } = useContext(FetchModuleStore.Context);
+  const { state } = useContext(FetchModuleStore.Context);
+  const { courseDetails } = state;
 
   return (
     <h1>{courseDetails.title}</h1>
