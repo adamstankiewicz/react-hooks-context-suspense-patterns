@@ -75,13 +75,33 @@ export default function reducer(state, action) {
 import React, { useContext } from 'react';
 
 import { FetchModuleStore } from './CoursePage';
+import { getActiveCourseRun } from './utils';
+import { setActiveCourseRun } from './actions';
 
 export default function Course() {
-  const { state } = useContext(FetchModuleStore.Context);
+  const { state, dispatch } = useContext(FetchModuleStore.Context);
   const { courseDetails } = state;
+
+  // When `courseDetails` changes, update the shared module store with the `activeCourseRun`
+  useEffect(() => {
+    const activeCourseRun = getActiveCourseRun(courseDetails.courseRuns);
+    dispatch(setActiveCourseRun(activeCourseRun));
+  }, [courseDetails]);
 
   return (
     <h1>{courseDetails.title}</h1>
   );
+}
+```
+
+**data/actions.js**
+```javascript
+import { SET_ACTIVE_COURSE_RUN } from './constants';
+
+export function setActiveCourseRun(activeCourseRun) {
+  return {
+    type: SET_ACTIVE_COURSE_RUN,
+    payload: activeCourseRun,
+  };
 }
 ```
