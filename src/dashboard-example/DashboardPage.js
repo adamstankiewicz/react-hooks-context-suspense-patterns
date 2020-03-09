@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { makeFetchModuleStore, makeServiceResource } from '../fetch-store';
+import { makeFetchModuleStore, makeServiceResource } from '../fetch-module-with-store';
 import Dashboard from './Dashboard';
 
 import reducer, { initialState } from './data/reducer';
@@ -19,8 +19,8 @@ export const FetchModuleStore = makeFetchModuleStore({
 
 export default function DashboardPage() {
   return (
-    <FetchStore.Component fallback={<h1>loading...</h1>}>
+    <FetchModuleStore.Component fallback={<h1>loading...</h1>}>
       <Dashboard />
-    </FetchStore.Component>
+    </FetchModuleStore.Component>
   );
 }
