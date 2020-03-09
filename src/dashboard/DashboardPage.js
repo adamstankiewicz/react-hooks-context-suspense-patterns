@@ -1,9 +1,6 @@
 import React from 'react';
 
-import { makeServiceResource } from '../utils';
-
-import makeFetchStore from '../fetch-store';
-
+import { makeFetchStore, makeServiceResource } from '../fetch-store';
 import Dashboard from './Dashboard';
 
 import reducer, { initialState } from './data/reducer';

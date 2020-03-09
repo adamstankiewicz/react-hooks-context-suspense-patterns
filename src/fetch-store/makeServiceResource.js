@@ -31,7 +31,7 @@ export function wrapPromise(promise) {
   return { read };
 }
 
-export function makeServiceResource(options) {
+export default function makeServiceResource(options) {
   const promises = {};
 
   const wrapPromises = () => {
