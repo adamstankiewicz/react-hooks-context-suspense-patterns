@@ -69,6 +69,19 @@ export default function reducer(state, action) {
 }
 ```
 
+**data/actions.js**
+
+```javascript
+import { SET_ACTIVE_COURSE_RUN } from './constants';
+
+export function setActiveCourseRun(activeCourseRun) {
+  return {
+    type: SET_ACTIVE_COURSE_RUN,
+    payload: activeCourseRun,
+  };
+}
+```
+
 **Course.jsx**
 
 ```javascript
@@ -91,17 +104,5 @@ export default function Course() {
   return (
     <h1>{courseDetails.title}</h1>
   );
-}
-```
-
-**data/actions.js**
-```javascript
-import { SET_ACTIVE_COURSE_RUN } from './constants';
-
-export function setActiveCourseRun(activeCourseRun) {
-  return {
-    type: SET_ACTIVE_COURSE_RUN,
-    payload: activeCourseRun,
-  };
 }
 ```
