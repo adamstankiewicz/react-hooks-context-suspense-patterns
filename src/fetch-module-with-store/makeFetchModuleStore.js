@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useMemo, Suspense } from 'react';
 
-export default function makeFetchStore({ reducer, initialState, resource }) {
+export default function makeFetchModuleStore({ reducer, initialState, resource }) {
   const Context = createContext(null);
 
   const BaseComponent = ({ children }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { makeFetchStore, makeServiceResource } from '../fetch-store';
+import { makeFetchModuleStore, makeServiceResource } from '../fetch-store';
 import Dashboard from './Dashboard';
 
 import reducer, { initialState } from './data/reducer';
@@ -11,7 +11,7 @@ const resource = makeServiceResource({
   todos: fetchTodos,
 });
 
-export const FetchStore = makeFetchStore({
+export const FetchModuleStore = makeFetchModuleStore({
   reducer,
   initialState,
   resource,

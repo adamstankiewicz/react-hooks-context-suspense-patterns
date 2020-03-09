@@ -1,2 +1,2 @@
-export { default as makeFetchStore } from './makeFetchStore';
+export { default as makeFetchModuleStore } from './makeFetchModuleStore';
 export { default as makeServiceResource } from './makeServiceResource';
