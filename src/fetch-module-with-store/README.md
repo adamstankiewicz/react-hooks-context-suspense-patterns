@@ -4,7 +4,7 @@ A potentially publishable NPM package that supports creating component modules t
 
 1. Share data across all components in the module;
 2. Let all components in the module update the shared data.
-3. Automatically inject data returned by external data dependencies (e.g., APIs) into the aforementioned shared data store;
+3. Automatically inject data returned by external data dependencies (e.g., APIs) into the aforementioned shared data store.
 4. Prevent rendering of the module's component tree until all data is successfully returned. A fallback component (e.g., loading spinner) can be rendered if data is still fetching.
 
 ## What's the problem?
