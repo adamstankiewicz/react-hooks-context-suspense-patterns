@@ -10,7 +10,6 @@ A potentially publishable NPM package that supports creating component modules t
 ## What's the problem?
 
 * I want to share data across all of the components in a folder in a module-specific store. For example, if I am trying to render a page for a ``Course`` (i.e., module), I'd like to have all the data that ``Course`` relies on in a store that can be read from or updated at any point in the component tree within the module.
-* I want to let any of the components in a folder update this shared data as needed.
 * I want to prevent the rendering of the component tree until all external data dependencies (e.g., API responses) are resolved.
 * I don't want to have to manage loading states manually throughout the subcomponent tree. More specifically, I'd like my subcomponents to feel more synchronous and declarative. For example, rather than needing to ``return null;`` to prevent rendering a component when its data is missing (e.g., still fetching), it would be great to just try to access the data, and if it doesn't exist, just render the fallback component for the module.
 
